@@ -17,4 +17,9 @@ RSpec.describe Dobble do
     puts expected_normalized
     expect(normalize(test_string)).to eq(expected_normalized)
   end
+  it "compares two strings after being normalized" do
+    test_string1 = "one SeaSon after  another-"
+    test_string2 = "One season  after ~another"
+    expect(compare(test_string1, test_string2)).to eq(true)
+  end
 end
